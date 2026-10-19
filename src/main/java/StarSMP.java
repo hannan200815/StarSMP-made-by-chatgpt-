@@ -257,8 +257,8 @@ final class AbilityManager implements Listener {
     }
     private boolean nature(Player p, int slot) {
         if (slot == 1) { areaEffects(p, 5, PotionEffectType.SLOWNESS, 80, 3, Particle.COMPOSTER); areaDamage(p,5,3); return true; }
-        if (slot == 2) { heal(p, 5); for (Entity e : p.getNearbyEntities(6,6,6)) if (e instanceof Player ally && (ally.equals(p) || plugin.getConfig().getBoolean("settings.friendly-fire", false))) { heal(ally, 4); ally.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 80, 1)); } p.getWorld().spawnParticle(Particle.VILLAGER_HAPPY,p.getLocation().add(0,1,0),35,2,1,2,.1); p.playSound(p.getLocation(), Sound.BLOCK_AMETHYST_BLOCK_CHIME,1,1.5f); return true; }
-        heal(p, 8); p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 160, 1)); areaDamage(p, 6, 4); areaEffects(p,6,PotionEffectType.SLOWNESS,80,1,Particle.VILLAGER_HAPPY); return true;
+        if (slot == 2) { heal(p, 5); for (Entity e : p.getNearbyEntities(6,6,6)) if (e instanceof Player ally && (ally.equals(p) || plugin.getConfig().getBoolean("settings.friendly-fire", false))) { heal(ally, 4); ally.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 80, 1)); } p.getWorld().spawnParticle(Particle.HAPPY_VILLAGER,p.getLocation().add(0,1,0),35,2,1,2,.1); p.playSound(p.getLocation(), Sound.BLOCK_AMETHYST_BLOCK_CHIME,1,1.5f); return true; }
+        heal(p, 8); p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 160, 1)); areaDamage(p, 6, 4); areaEffects(p,6,PotionEffectType.SLOWNESS,80,1,Particle.HAPPY_VILLAGER); return true;
     }
     private boolean soul(Player p, int slot) {
         if (slot == 1) { LivingEntity t=lookTarget(p,16); if(t==null){p.sendMessage(ChatColor.RED+"No target in sight.");return false;} damage(p,t,6); heal(p,3); p.getWorld().spawnParticle(Particle.SOUL, t.getLocation().add(0,1,0),20,.4,.5,.4,.02); return true; }
