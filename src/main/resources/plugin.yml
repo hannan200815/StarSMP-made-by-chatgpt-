@@ -1,1 +1,15 @@
-
+name: StarSMP
+version: 1.0.0-round3
+main: dev.starsmp.StarSMP
+api-version: '1.21'
+author: StarSMP
+description: Cosmic survival RPG progression with eight Stars.
+commands:
+  starsmp:
+    description: StarSMP player and administrator command.
+    usage: /starsmp help
+    aliases: [star]
+permissions:
+  starsmp.admin:
+    description: Administrative access to StarSMP.
+    default: op
